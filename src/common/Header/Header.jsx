@@ -7,11 +7,10 @@ const Header = () => {
   return (
     <Container fluid className='contenedorHeader' xs={12} md={12} xl={12}>
         <div className='contenedorLogo'>
-            <img className='logo' src="../../../img/MovieTown.png" alt="Logo" srcset="" />
+            <img className='logo' src="../../../img/MovieTown.png" alt="Logo" />
         </div>
 
         <div className='contenedorBotones'>
-          <Button variant="dark">Inicio</Button>
           <Button variant="dark">Top 20</Button>
         </div>
 
