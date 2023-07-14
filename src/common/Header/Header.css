@@ -1,0 +1,31 @@
+
+.contenedorHeader{
+    width: 100vw;
+    height: 10vh;
+}
+
+.contenedorHeader, .contenedorBotones, .contenedorBuscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorBotones{
+    width: 60%;
+    height: 100%;
+}
+
+.contenedorLogo{
+    width: 20%;
+    height: 100%;
+}
+
+.contenedorBuscador{
+    width: 20%;
+    height: 100%;
+}
+
+.logo{
+    width: 50%;
+    height: 100%;
+}

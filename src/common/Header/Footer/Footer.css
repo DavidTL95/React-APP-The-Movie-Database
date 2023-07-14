@@ -1,0 +1,32 @@
+
+.contenedorFooter{
+    width: 100vw;
+    height: 15vh;
+}
+
+.contenedorRRSS{
+    height: 30%;
+    width: 30%;
+}
+
+.contenedorRRSS a img{
+    width: 35%;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+.contenedorRRSS a img:hover{
+    width: 38%;
+
+    background-color: rgb(86, 86, 86);
+
+    transition: 0.2s;
+}
+
+.contenedorFooter, .contenedorRRSS{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
