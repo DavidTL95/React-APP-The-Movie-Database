@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <Container fluid className='contenedorFooter'>
+    <Container fluid className='contenedorFooter' xs={12} md={12} xl={12}>
         <div className='contenedorRRSS'>
             <a href="" target='_blank'><img src="../../../img/RRSS/facebook.png" alt="facebook"/></a>
             <a href="" target='_blank'><img src="../../../img/RRSS/instagram.png" alt="instagram"/></a>
