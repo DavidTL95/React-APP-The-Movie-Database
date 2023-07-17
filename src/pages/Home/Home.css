@@ -8,31 +8,29 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
 
+    gap: 2;
+}
+
+.contenedorBuscador{
+    width: 100%;
+
+    display: flex;
     justify-content: center;
+    align-content: center;
 }
 
 .colTarjetas{
     display: flex;
+
+    align-items: flex-start;
 }
 
-.tarjeta{
-    width: 3rem;
+.search{
+    width: 15rem;
+    height: 2rem;
 
-    display: flex;
-    flex-direction: column;
-
-    margin: 1rem;
-
-    color: white;
-
-    border: 1px solid white;
-    border-radius: 10px;
-}
-
-.tarjeta img{
-    width: 100%;
-    height: 50%;
-
-    border-radius: 10px;
+    border-radius: 8px;
 }

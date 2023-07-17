@@ -1,0 +1,36 @@
+.tarjeta{
+    height: 55rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    margin: 1rem;
+
+    color: white;
+
+    border-radius: 10px;
+}
+
+.tarjeta img{
+    width: 100%;
+    height: 50%;
+
+    border-radius: 10px;
+}
+
+.bodyCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bodyCard button{
+    width: 90%;
+}
+
+.titulo{
+    font-size: 1.5em;
+}

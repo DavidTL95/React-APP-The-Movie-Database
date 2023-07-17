@@ -11,11 +11,11 @@ const Header = () => {
         </div>
 
         <div className='contenedorBotones'>
-          <Button variant="dark">Top 20</Button>
+
         </div>
 
         <div className='contenedorBuscador'>
-        <Form.Control type="text" placeholder="Normal text" />
+          <Button variant="dark">Top 20</Button>
         </div>
     </Container>
   )

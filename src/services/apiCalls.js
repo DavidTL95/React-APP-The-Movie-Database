@@ -17,3 +17,9 @@ export const bringMovies = async() => {
 
     return data.results;
 }
+
+export const bringOneMovie = async(title) => {
+    let {data} = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${title}&api_key=${apiKey}`)
+
+    return data.results
+}
