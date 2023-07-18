@@ -2,27 +2,45 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
 import { Card, Button, Col, Container, Row, Form } from 'react-bootstrap'
-import { URL_images, bringMovies } from '../../services/apiCalls';
+import { URL_images, bringMovies, bringOneMovie } from '../../services/apiCalls';
 import { MovieCard } from '../../common/MovieCard/MovieCard';
+import { useDebounce } from 'use-debounce';
 
 const Home = () => { 
 
   const [movies, setMovies] = useState([]);
+  const [search, setSearch] = useState("");
+  const [debounceSearch] = useDebounce(search, 1000);
+
+  // useEffect(() => {
+  //   bringMovies()
+  //   .then(
+  //     res => {
+  //       setMovies(res)
+  //     }
+  //   )
+  //   .catch(error => console.log(error));
+  // }, [])
 
   useEffect(() => {
-    bringMovies()
-    .then(
-      res => {
-        setMovies(res)
-      }
-    )
-    .catch(error => console.log(error));
-  }, [])
+    if(debounceSearch){
+      bringOneMovie(debounceSearch)
+      .then((res) => setMovies(res));
+    }else{
+      bringMovies()
+      .then((res) => setMovies(res));
+    }
+  }, [debounceSearch]);
+
+  const inputHandler = ({ target }) => {
+    const { value } = target;
+    setSearch(value);
+  }
 
   return (
     <Container fluid className='contenedorHome'>
       <div className='contenedorBuscador'>
-              <Form.Control className='search' name="title" type="text" placeholder="Search a movie..." />
+              <Form.Control className='search' name="title" type="text" placeholder="Search a movie..." onChange={inputHandler}/>
       </div>
         <Row className="contenedorTarjetas">
           {movies?.map((movie) => {
