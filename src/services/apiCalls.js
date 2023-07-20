@@ -19,7 +19,7 @@ export const bringMovies = async() => {
 }
 
 export const bringOneMovie = async(title) => {
-    let {data} = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${title}&api_key=${apiKey}`)
-
+    let {data} = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${title.search}&api_key=${apiKey}`)
+    console.log(`Las peliculkas son: ${data}`)
     return data.results
 }

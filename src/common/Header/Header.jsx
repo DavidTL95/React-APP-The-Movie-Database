@@ -1,9 +1,39 @@
 
-import React from 'react'
 import './Header.css'
-import { Button, Container, Form } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
 
-const Header = () => {
+import { Container } from 'react-bootstrap'
+import { TextInput } from '../TextInput/TextInput';
+
+import { bringOneMovie } from '../../services/apiCalls';
+
+import { useDispatch } from "react-redux";
+import { addFindings, deleteFindings } from '../../pages/searchSlice';
+
+
+export const Header = () => {
+
+  const [searchInfo, setSearchInfo] = useState("");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(searchInfo){
+      const bringData = setTimeout(() => {
+        bringOneMovie(searchInfo)
+        .then(
+          res => {
+            dispatch(addFindings({findings: res}))
+          }
+        )
+        .catch(error => console.log(error))
+      }, 750)
+      return () => clearTimeout(bringData)
+    }else{
+      dispatch(deleteFindings({findings: []}))
+    }
+  },[searchInfo])
+
   return (
     <Container fluid className='contenedorHeader' xs={12} md={12} xl={12}>
         <div className='contenedorLogo'>
@@ -15,10 +45,8 @@ const Header = () => {
         </div>
 
         <div className='contenedorBuscador'>
-          <Button variant="dark">Top 20</Button>
+              <TextInput className='search' name="search" type="text" placeholder="Search a movie..." state = {setSearchInfo}/>
         </div>
     </Container>
   )
 }
-
-export default Header

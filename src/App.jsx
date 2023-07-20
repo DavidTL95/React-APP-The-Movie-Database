@@ -1,5 +1,5 @@
 
-import Header from './common/Header/Header'
+import { Header } from './common/Header/Header'
 import Footer from './common/Footer/Footer'
 import Home from './pages/Home/Home'
 import './App.css'
