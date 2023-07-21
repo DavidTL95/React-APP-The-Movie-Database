@@ -5,10 +5,12 @@ import { Card, Button, Col, Container, Row, Form } from 'react-bootstrap'
 import { URL_images, bringMovies, bringOneMovie } from '../../services/apiCalls';
 import { MovieCard } from '../../common/MovieCard/MovieCard';
 import { useDebounce } from 'use-debounce';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { searchData } from '../searchSlice';
+import { useNavigate } from 'react-router-dom';
+import { addMovie } from '../detailSlice';
 
-const Home = () => { 
+export const Home = () => { 
 
   const searchReduxData = useSelector(searchData);
 
@@ -16,13 +18,18 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [debounceSearch] = useDebounce(search, 500);
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   useEffect(() => {
+
     // console.log(`Las peliculas estan aqui;${searchReduxData}`)
     if(searchReduxData.findings.length === 0){
       bringMovies()
       .then(
         res => {
-          setMovies(res)
+          console.log(`jhbkdsjb,${res.data.results}`)
+          setMovies(res.data.results)
         }
       )
       .catch(error => console.log(error));
@@ -44,6 +51,12 @@ const Home = () => {
   //   setSearch(value);
   // }
 
+  const seeDetail = (movie) => {
+    console.log(`jbaskjdbask, ${movie}`)
+    dispatch(addMovie(movie))
+    navigate("/detail")
+  }
+
   return (
     <Container fluid className='contenedorHome'>
         <Row className="contenedorTarjetas">
@@ -51,8 +64,8 @@ const Home = () => {
             <>
               {searchReduxData.findings.map((movie) => {
                 return (
-                  <Col className='colTarjetas' xs={10} md={4} xl={3} key={movie.id}>
-                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_title} description={movie.overview}></MovieCard>
+                  <Col className='colTarjetas' xs={10} md={4} xl={3} key={movie.id} onClick={() => seeDetail(movie)}>
+                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_title} description={movie.overview} id={movie.id}></MovieCard>
                   </Col>
                 )
               })}
@@ -61,8 +74,8 @@ const Home = () => {
             <>
               {movies?.map((movie) => {
                 return(
-                  <Col className='colTarjetas' xs={10} md={4} xl={3} key={movie.id}>
-                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_title} description={movie.overview}></MovieCard>
+                  <Col className='colTarjetas' xs={10} md={4} xl={3} key={movie.id} onClick={() => seeDetail(movie)}>
+                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_title} description={movie.overview} id={movie.id}></MovieCard>
                   </Col>
                 )
               })}
@@ -80,5 +93,3 @@ const Home = () => {
     </Container>
   )
 }
-
-export default Home

@@ -11,15 +11,20 @@ const URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&langu
 
 export const bringMovies = async() => {
 
-    let {data} = await axios.get(URL);
+    // let data = await axios.get(URL);
 
-    console.log(data.results);
+    // console.log(`Las peliculas: ${data}`);
 
-    return data.results;
+    return await axios.get(URL);
 }
 
 export const bringOneMovie = async(title) => {
     let {data} = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${title.search}&api_key=${apiKey}`)
     console.log(`Las peliculkas son: ${data}`)
     return data.results
+}
+
+export const bringMovieByID = async(id) => {
+    let {data} = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
+    return data
 }

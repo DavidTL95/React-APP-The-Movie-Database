@@ -2,6 +2,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import searchSlice from "../pages/searchSlice";
+import detailSlice from "../pages/detailSlice";
 
 import storage from "redux-persist/lib/storage"
 
@@ -10,8 +11,10 @@ import { persistReducer } from "redux-persist";
 
 import thunk from "redux-thunk"
 
+
 const reducers = combineReducers({
-    search: searchSlice
+    search: searchSlice,
+    detail: detailSlice
 });
 
 const persitConfig = {

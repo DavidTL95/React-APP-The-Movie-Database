@@ -2,8 +2,12 @@
 import React, { useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import './MovieCard.css';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-export const MovieCard = ({img, title, description}) => {
+import { addMovie } from '../../pages/detailSlice';
+
+export const MovieCard = ({img, title, description, id}) => {
 
   return (
     <>
@@ -12,7 +16,6 @@ export const MovieCard = ({img, title, description}) => {
         
         img
         
-        
         ? img
         : "No hay"} />
       <Card.Body className='bodyCard'>
@@ -20,7 +23,6 @@ export const MovieCard = ({img, title, description}) => {
         <Card.Text>
           {description}
         </Card.Text>
-        <Button variant="primary">Detalles</Button>
       </Card.Body>
     </Card>
   </>
