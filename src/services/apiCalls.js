@@ -57,3 +57,19 @@ export const bringMovieByID = async(id) => {
 
     return data.results
 }
+
+export const bringTopMovies = async() => {
+
+  const options = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/movie/top_rated',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWI0NDFlMGUwNjlkOTFhMGU4MDkwZGViNjlmYmRiNSIsInN1YiI6IjY0YmE2ODRiMDZmOTg0MDBjNGYxZGE5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IyVPQZwiS7sdzV-9-g_3Hi6DOXF5dgM31_nV20h0UXQ'
+    }
+  };
+
+  let { data } = await axios.get('https://api.themoviedb.org/3/movie/top_rated', options);
+
+  return data.results
+}

@@ -1,0 +1,29 @@
+.contenedorHome{
+    width: 100%;
+    height: 75%;
+
+}
+
+.contenedorTarjetas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+
+    gap: 2;
+}
+
+.contenedorBuscador{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.colTarjetas{
+    display: flex;
+
+    align-items: flex-start;
+}

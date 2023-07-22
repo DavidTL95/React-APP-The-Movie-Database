@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './TextInput.css'
+
 export const TextInput = ({name, type, placeholder, state}) => {
 
     const InputHandler = ({ target }, state) => {
@@ -12,7 +14,7 @@ export const TextInput = ({name, type, placeholder, state}) => {
     };
     
     return(
-        <input className='my-4 inputDesign'
+        <input className='buscador my-4 inputDesign'
             type={type}
             placeholder={placeholder}
             name={name}

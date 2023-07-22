@@ -8,6 +8,7 @@ import { bringOneMovie } from '../../services/apiCalls';
 
 import { useDispatch } from "react-redux";
 import { addFindings, deleteFindings } from '../../pages/searchSlice';
+import { useNavigate } from 'react-router-dom';
 
 import './Header.css'
 
@@ -15,6 +16,7 @@ export const Header = () => {
 
   const [searchInfo, setSearchInfo] = useState("");
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,11 +40,13 @@ export const Header = () => {
     <Container fluid className='contenedorHeader' xs={12} md={12} xl={12}>
 
         <div className='contenedorCentro'>
-          <p className='title'>Movie Town🎬</p>
+          <p onClick={() => navigate("/")} className='title'>Movie Town🎬</p>
         </div>
-
-        <div className='contenedorDer'>
-              <TextInput className='search' name="search" type="text" placeholder="Search a movie..." state = {setSearchInfo}/>
+        <div className='contenedorBotones'>
+            <button className="boton" onClick={() => navigate("/topPeliculas")}>Top 20</button>
+        </div>
+        <div className='contenedorInput'>
+            <TextInput className='search' name="search" type="text" placeholder="Search a movie..." state = {setSearchInfo}/>
         </div>
     </Container>
   )
