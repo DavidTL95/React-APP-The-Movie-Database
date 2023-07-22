@@ -1,0 +1,28 @@
+.contenedor{
+
+}
+
+.detailContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.col{
+    max-width: 50%;
+    margin: 5%;
+    width: 70%;
+    height: auto;   
+}
+
+.imageDetails{
+    border-radius: 10px;
+}
+
+.details{
+    font-size: 1.5rem;
+}
+
+.title{
+    margin-top: 0;
+}

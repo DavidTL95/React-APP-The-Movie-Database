@@ -1,5 +1,4 @@
 
-import './Header.css'
 import React, { useEffect, useState } from 'react'
 
 import { Container } from 'react-bootstrap'
@@ -10,6 +9,7 @@ import { bringOneMovie } from '../../services/apiCalls';
 import { useDispatch } from "react-redux";
 import { addFindings, deleteFindings } from '../../pages/searchSlice';
 
+import './Header.css'
 
 export const Header = () => {
 
@@ -36,15 +36,12 @@ export const Header = () => {
 
   return (
     <Container fluid className='contenedorHeader' xs={12} md={12} xl={12}>
-        <div className='contenedorLogo'>
-            <img className='logo' src="../../../img/MovieTown.png" alt="Logo" />
+
+        <div className='contenedorCentro'>
+          <p className='title'>Movie Town🎬</p>
         </div>
 
-        <div className='contenedorBotones'>
-
-        </div>
-
-        <div className='contenedorBuscador'>
+        <div className='contenedorDer'>
               <TextInput className='search' name="search" type="text" placeholder="Search a movie..." state = {setSearchInfo}/>
         </div>
     </Container>

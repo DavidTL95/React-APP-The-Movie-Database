@@ -2,37 +2,36 @@
 .contenedorHeader{
     width: 100%;
     height: 10%;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.contenedorHeader, .contenedorBotones, .contenedorBuscador{
+.contenedorCentro, .contenedorDer{
     display: flex;
+
+    margin-bottom: 1rem;
+}
+
+.contenedorCentro{
+    width: 100%;
+
     justify-content: center;
     align-items: center;
 }
 
-.contenedorBotones{
-    width: 60%;
-    height: 100%;
+.contenedorDer{
+    width: 100%;
+    height: 10%;
+
+    justify-content: center;
+    align-items: center;
 }
 
-.contenedorLogo{
-    width: 20%;
-    height: 100%;
-}
-
-.contenedorBuscador{
-    width: 20%;
-    height: 100%;
-}
-
-.logo{
-    width: 50%;
-    height: 100%;
+.title{
+    font-size: 4rem;
 }
 
 .search{
-    width: 15rem;
-    height: 2rem;
-
-    border-radius: 8px;
+    border-radius: 10px;
 }

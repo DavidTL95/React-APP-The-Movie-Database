@@ -7,7 +7,10 @@ import { useDispatch } from 'react-redux';
 
 import { addMovie } from '../../pages/detailSlice';
 
-export const MovieCard = ({img, title, description, id}) => {
+export const MovieCard = ({img, title, description}) => {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -20,9 +23,6 @@ export const MovieCard = ({img, title, description, id}) => {
         : "No hay"} />
       <Card.Body className='bodyCard'>
         <Card.Title className='titulo'>{title}</Card.Title>
-        <Card.Text>
-          {description}
-        </Card.Text>
       </Card.Body>
     </Card>
   </>
