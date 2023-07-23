@@ -3,19 +3,13 @@ import axios from "axios";
 
 export const URL_images = "https://image.tmdb.org/t/p/original/";
 
-// const nuevaURL='https://www.themoviedb.org/t/p/w300_and_h450_bestv2';
+export const isMovie = true;
 
 const apiKey = "210d6a5dd3f16419ce349c9f1b200d6d";
 
-// const URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
-
 const URL = 'https://api.themoviedb.org/3/discover/movie'
-// export const bringMovies = async() => {
 
-//     let {data} = await axios.get(URL);
-
-//     return data.results;
-// }
+//LLamadas a la API para las películas.
 
 export const bringMovies = async() => {
 
@@ -75,6 +69,8 @@ export const bringTopMovies = async() => {
 }
 
 // ------------------------------------------------------------
+
+//LLamadas a la API para las series.
 
 export const bringSeries = async() => {
 
