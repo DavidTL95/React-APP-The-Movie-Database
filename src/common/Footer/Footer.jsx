@@ -3,7 +3,7 @@ import React from 'react'
 import './Footer.css'
 import { Container } from 'react-bootstrap'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <Container fluid className='contenedorFooter' xs={12} md={12} xl={12}>
         <div className='contenedorRRSS'>
@@ -16,5 +16,3 @@ const Footer = () => {
     </Container>
   )
 }
-
-export default Footer

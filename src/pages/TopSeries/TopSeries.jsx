@@ -1,15 +1,15 @@
 
 import React, { useEffect, useState } from 'react'
-import './Home.css'
+import './TopSeries.css'
 import { Card, Button, Col, Container, Row, Form } from 'react-bootstrap'
-import { URL_images, bringMovieByID, bringMovies, bringOneMovie } from '../../services/apiCalls';
+import { URL_images, bringTopSeries } from '../../services/apiCalls';
 import { MovieCard } from '../../common/MovieCard/MovieCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchData } from '../searchSlice';
 import { useNavigate } from 'react-router-dom';
 import { addMovie } from '../detailSlice';
 
-export const Home = () => { 
+export const TopSeries = () => { 
 
   const searchReduxData = useSelector(searchData);
 
@@ -22,7 +22,7 @@ export const Home = () => {
 
     // console.log(`Las peliculas estan aqui;${searchReduxData}`)
     if(searchReduxData.findings.length === 0){
-      bringMovies()
+      bringTopSeries()
       .then(
         res => {
           setMovies(res)
@@ -32,9 +32,11 @@ export const Home = () => {
     }
   }, [searchReduxData])
 
+  console.log(movies)
+
   const seeDetail = (item) => {
     dispatch(addMovie(item))
-    navigate("/detail")
+    navigate("/detailSeries")
   }
 
   return (

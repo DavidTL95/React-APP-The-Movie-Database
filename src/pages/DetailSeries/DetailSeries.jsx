@@ -7,9 +7,9 @@ import { MovieCard } from "../../common/MovieCard/MovieCard";
 import { useNavigate, useParams } from "react-router-dom";
 import { URL_images, bringMovieByID } from "../../services/apiCalls";
 
-import './Detail.css'
+import './DetailSeries.css'
 
-export const Detail = () => {
+export const DetailSeries = () => {
     
     const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ export const Detail = () => {
                     {reduxMovieData.vote_average}⭐
                 </Col>
                 <Col className="detailsContainer">
-                    <p className="title">{reduxMovieData.original_title}</p>
+                    <p className="title">{reduxMovieData.original_name}</p>
                     <p>{reduxMovieData.overview}</p>
                 </Col>
             </Row>

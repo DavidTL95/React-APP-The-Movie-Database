@@ -1,15 +1,15 @@
 
 import React, { useEffect, useState } from 'react'
-import './Home.css'
+import './HomeSeries.css'
 import { Card, Button, Col, Container, Row, Form } from 'react-bootstrap'
-import { URL_images, bringMovieByID, bringMovies, bringOneMovie } from '../../services/apiCalls';
+import { URL_images, bringMovieByID, bringMovies, bringOneMovie, bringSeries } from '../../services/apiCalls';
 import { MovieCard } from '../../common/MovieCard/MovieCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchData } from '../searchSlice';
 import { useNavigate } from 'react-router-dom';
 import { addMovie } from '../detailSlice';
 
-export const Home = () => { 
+export const HomeSeries = () => { 
 
   const searchReduxData = useSelector(searchData);
 
@@ -22,7 +22,7 @@ export const Home = () => {
 
     // console.log(`Las peliculas estan aqui;${searchReduxData}`)
     if(searchReduxData.findings.length === 0){
-      bringMovies()
+      bringSeries()
       .then(
         res => {
           setMovies(res)
@@ -34,8 +34,10 @@ export const Home = () => {
 
   const seeDetail = (item) => {
     dispatch(addMovie(item))
-    navigate("/detail")
+    navigate("/detailSeries")
   }
+
+  console.log(movies)
 
   return (
     <Container fluid className='contenedorHome'>
@@ -45,7 +47,7 @@ export const Home = () => {
               {searchReduxData.findings.map((movie) => {
                 return (
                   <Col onClick={() => seeDetail(movie)} className='colTarjetas' xs={10} md={4} xl={3} key={movie.id}>
-                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_title} description={movie.overview}></MovieCard>
+                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_name} description={movie.overview}></MovieCard>
                   </Col>
                 )
               })}

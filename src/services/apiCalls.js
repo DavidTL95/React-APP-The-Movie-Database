@@ -73,3 +73,45 @@ export const bringTopMovies = async() => {
 
   return data.results
 }
+
+// ------------------------------------------------------------
+
+export const bringSeries = async() => {
+
+  let res;
+
+  const options = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/discover/tv',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWI0NDFlMGUwNjlkOTFhMGU4MDkwZGViNjlmYmRiNSIsInN1YiI6IjY0YmE2ODRiMDZmOTg0MDBjNGYxZGE5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IyVPQZwiS7sdzV-9-g_3Hi6DOXF5dgM31_nV20h0UXQ'
+    }
+  };
+
+  let { data } = await axios.get('https://api.themoviedb.org/3/discover/tv', options);
+
+  return data.results
+}
+
+export const bringTopSeries = async() => {
+
+  const options = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/tv/top_rated',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWI0NDFlMGUwNjlkOTFhMGU4MDkwZGViNjlmYmRiNSIsInN1YiI6IjY0YmE2ODRiMDZmOTg0MDBjNGYxZGE5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IyVPQZwiS7sdzV-9-g_3Hi6DOXF5dgM31_nV20h0UXQ'
+    }
+  };
+
+  let { data } = await axios.get('https://api.themoviedb.org/3/tv/top_rated', options);
+
+  return data.results
+}
+
+export const bringOneMSerie = async(title) => {
+  let {data} = await axios.get(`https://api.themoviedb.org/3/search/tv?query=${title.search}&api_key=${apiKey}`)
+
+  return data.results
+}

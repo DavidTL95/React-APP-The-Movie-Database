@@ -39,14 +39,17 @@ export const Header = () => {
   return (
     <Container fluid className='contenedorHeader' xs={12} md={12} xl={12}>
 
-        <div className='contenedorCentro'>
+        <div className='contenedorCentro' xs={6} md={6} xl={6}>
           <p onClick={() => navigate("/")} className='title'>Movie Town🎬</p>
         </div>
-        <div className='contenedorBotones'>
-            <button className="boton" onClick={() => navigate("/topPeliculas")}>Top 20</button>
+        <div className='contenedorBotones' xs={6} md={6} xl={6}>
+            <button className="boton" onClick={() => navigate("/")}>Movies</button>
+            <button className="boton" onClick={() => navigate("/topPeliculas")}>Top Movies</button>
+            <button className="boton" onClick={() => navigate("/homeSeries")}>Series</button>
+            <button className="boton" onClick={() => navigate("/topSeries")}>Top Series</button>
         </div>
-        <div className='contenedorInput'>
-            <TextInput className='search' name="search" type="text" placeholder="Search a movie..." state = {setSearchInfo}/>
+        <div className='contenedorInput' xs={12} md={12} xl={12}>
+            <TextInput className='search' name="search" type="text" placeholder="Search..." state = {setSearchInfo}/>
         </div>
     </Container>
   )
