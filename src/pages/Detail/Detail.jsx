@@ -6,6 +6,8 @@ import { URL_images } from "../../services/apiCalls";
 
 import './Detail.css'
 
+//Creación del detalle de las películas. Y recogida de la información guardada en REDUX.
+
 export const Detail = () => {
 
     const reduxMovieData = useSelector(movieData);

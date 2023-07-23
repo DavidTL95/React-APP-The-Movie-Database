@@ -3,6 +3,7 @@ import './SeriesCard.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import { URL_images } from '../../services/apiCalls';
 
+//Creación de la carta de detalle. Pasándole los inputs que necesita para mostrar la información.
 
 export const SeriesCard = ({img, title, overview, vote}) => {
 

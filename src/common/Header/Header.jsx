@@ -19,6 +19,8 @@ export const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+//Llamada a la API en caso de que el input text tenga contenido. Con un devounce de 0.75s.
+
   useEffect(() => {
     if(searchInfo){
       const bringData = setTimeout(() => {

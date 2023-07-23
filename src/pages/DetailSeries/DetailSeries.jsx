@@ -4,6 +4,8 @@ import { movieData } from "../detailSlice"
 import './DetailSeries.css'
 import { SeriesCard } from "../../common/SeriesCard/SeriesCard";
 
+//Creación de la página dónde se mostrara la información en detalle de las series.
+
 export const DetailSeries = () => {
 
     const reduxMovieData = useSelector(movieData);

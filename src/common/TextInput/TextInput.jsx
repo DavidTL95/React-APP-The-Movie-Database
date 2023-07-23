@@ -2,6 +2,8 @@ import React from 'react'
 
 import './TextInput.css'
 
+//Creación y preparación del input para la búsqueda.
+
 export const TextInput = ({name, type, placeholder, state}) => {
 
     const InputHandler = ({ target }, state) => {

@@ -3,7 +3,9 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import './MovieCard.css';
 
-export const MovieCard = ({img, title, description}) => {
+//Creación de la card básica de películas con imagen y título.
+
+export const MovieCard = ({img, title}) => {
 
   return (
     <>

@@ -8,6 +8,7 @@ import { HomeSeries } from "../HomeSeries/HomeSeries"
 import { TopSeries } from "../TopSeries/TopSeries"
 import { DetailSeries } from "../DetailSeries/DetailSeries"
 
+//Rutas entre los distintos archivos del proyecto, para permitir la navegación entre ellos.
 
 export const Body = () => {
     return(
