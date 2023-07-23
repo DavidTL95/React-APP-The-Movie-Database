@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
 import './TopPeliculas.css'
-import { Card, Button, Col, Container, Row, Form } from 'react-bootstrap'
-import { URL_images, bringMovieByID, bringMovies, bringOneMovie, bringTopMovies } from '../../services/apiCalls';
+import { Col, Container, Row } from 'react-bootstrap'
+import { URL_images, bringTopMovies } from '../../services/apiCalls';
 import { MovieCard } from '../../common/MovieCard/MovieCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchData } from '../searchSlice';

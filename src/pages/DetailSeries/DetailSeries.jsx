@@ -1,17 +1,11 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { movieData } from "../detailSlice"
-import { useEffect, useState } from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
-import { Button } from "bootstrap";
-import { MovieCard } from "../../common/MovieCard/MovieCard";
-import { useNavigate, useParams } from "react-router-dom";
-import { URL_images, bringMovieByID } from "../../services/apiCalls";
+import { Container, Row, Col } from "react-bootstrap";
+import { URL_images } from "../../services/apiCalls";
 
 import './DetailSeries.css'
 
 export const DetailSeries = () => {
-    
-    const navigate = useNavigate();
 
     const reduxMovieData = useSelector(movieData);
 

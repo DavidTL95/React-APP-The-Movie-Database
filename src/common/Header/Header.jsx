@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { TextInput } from '../TextInput/TextInput';
 
-import { bringOneSerie, bringOneMovie } from '../../services/apiCalls';
+import { bringOneMovie } from '../../services/apiCalls';
 
 import { useDispatch } from "react-redux";
 import { addFindings, deleteFindings } from '../../pages/searchSlice';
@@ -15,7 +15,6 @@ import './Header.css'
 export const Header = () => {
 
   const [searchInfo, setSearchInfo] = useState("");
-  const [searchInfoSerie, setSearchInfoSerie] = useState("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
