@@ -110,7 +110,7 @@ export const bringTopSeries = async() => {
   return data.results
 }
 
-export const bringOneMSerie = async(title) => {
+export const bringOneSerie = async(title) => {
   let {data} = await axios.get(`https://api.themoviedb.org/3/search/tv?query=${title.search}&api_key=${apiKey}`)
 
   return data.results

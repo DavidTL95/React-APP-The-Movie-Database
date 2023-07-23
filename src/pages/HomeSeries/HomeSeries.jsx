@@ -37,8 +37,6 @@ export const HomeSeries = () => {
     navigate("/detailSeries")
   }
 
-  console.log(movies)
-
   return (
     <Container fluid className='contenedorHome'>
         <Row className="contenedorTarjetas">
@@ -57,7 +55,7 @@ export const HomeSeries = () => {
               {movies?.map((movie) => {
                 return(
                   <Col onClick={() => seeDetail(movie)} className='colTarjetas' xs={10} md={4} xl={3} key={movie.id}>
-                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_title} description={movie.overview}></MovieCard>
+                    <MovieCard img={URL_images+movie.poster_path} title={movie.original_name} description={movie.overview}></MovieCard>
                   </Col>
                 )
               })}

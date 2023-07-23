@@ -20,7 +20,7 @@ export const DetailSeries = () => {
             <Container fluid xs={10} md={4} xl={3}/>
             <Row className="contenedor" xs={10} md={4} xl={3}>
                 <Col className="imageContainer">
-                    <img className="imageDetails" src={URL_images+reduxMovieData.poster_path} alt={reduxMovieData.original_title}/>
+                    <img className="imageDetails" src={URL_images+reduxMovieData.poster_path} alt={reduxMovieData.original_name}/>
                 </Col>
                 <Col className="nota">
                     {reduxMovieData.vote_average}⭐
