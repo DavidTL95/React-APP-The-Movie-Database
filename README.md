@@ -23,7 +23,7 @@ Esto proyecto me sirvió para consolidar mis conocimientos e iniciación en Reac
   
 ## Deploy 🚀
 <div align="center">
-    <a href="[https://www.google.com](https://davidtl95.github.io/React-APP-The-Movie-Database/)"><strong>Url a producción </strong></a>🚀🚀🚀
+    <a href="https://the-movie-database-ten.vercel.app"><strong>Url a producción </strong></a>🚀🚀🚀
 </div>
 
 ## Stack
